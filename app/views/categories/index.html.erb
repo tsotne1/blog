@@ -2,12 +2,16 @@
 
 <%= will_paginate %>
 <% @categories.each do |category| %>
-  <ul class="listing">
-    <div class="card border-default text-default mb-3">
+  <ul class="listing" align="center" >
+    <div class="card" >
       <li class="article-title">
         <%= link_to "#{category.name}", categories_path(category) %>
       </li>
+      <li class="article-title">
+        <small><%= pluralize(category.articles.count, "article") %></small>
+      </li>
     </div>
   </ul>
+
 <% end %>
 <%= will_paginate %>
